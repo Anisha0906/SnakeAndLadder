@@ -15,7 +15,9 @@ namespace SnakeAndLadder
             int ComputerChoice;
             int Option = 0;
             Console.WriteLine("Game Started! Good Luck ");
-            Console.WriteLine("You are at " + StartPoint);
+
+            while (StartPoint != 100) 
+            {
             Random Random = new Random();
             RanDice = Random.Next(1, 7);
             Console.WriteLine("player Role Dice number is:" + " " + RanDice);
@@ -37,6 +39,11 @@ namespace SnakeAndLadder
                 default:
                     Console.WriteLine("Invalid Option");
                     break;
+            }
+                if (StartPoint < 0)
+                {
+                    StartPoint = 0;
+                }
             }
         }
     }
