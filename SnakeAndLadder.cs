@@ -13,7 +13,7 @@ namespace SnakeAndLadder
             int StartPoint = 0;
             int RanDice;
             int ComputerChoice;
-            int Option = 0;
+            int count=0;
             Console.WriteLine("Game Started! Good Luck ");
 
             while (StartPoint != 100) 
@@ -27,29 +27,33 @@ namespace SnakeAndLadder
             {
                 case 0:
                     Console.WriteLine("No Play");
-                    break;
+                        count++;
+                        break;
                 case 1:
                     StartPoint += RanDice;
+                        count++;
                         if (StartPoint > 100)          
                         {
 
                             StartPoint -= StartPoint;     
                         }
-                        Console.WriteLine("Got Ladder:" + StartPoint);
+                        Console.WriteLine("Got Ladder and Position of the Player: "+ StartPoint);
                     break;
                 case 2:
                     StartPoint -= RanDice;
+                        count++;
                         if (StartPoint < 0)                 
                         {
                             StartPoint = 0;
                         }
-                        Console.WriteLine("Snake Attack:" + StartPoint);
+                        Console.WriteLine("Snake Attack and Position of the Player: " + StartPoint);
                     break;
                 default:
                     Console.WriteLine("Invalid Option");
                     break;
             }
-           }
+                Console.WriteLine("Dice Role to Win the Game is " + count);
+            }
         }
     }
 }
